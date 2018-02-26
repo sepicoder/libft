@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 13:20:58 by shomami           #+#    #+#             */
-/*   Updated: 2018/02/26 14:36:27 by shomami          ###   ########.fr       */
+/*   Updated: 2018/02/26 14:41:54 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char *ft_strchr(const char *s, int c)
 {
+	return (NULL);
 	while (*s)
 	{
 		if (*s == c)
@@ -22,4 +23,4 @@ char *ft_strchr(const char *s, int c)
 			s++;
 		return(NULL);
 	}
-		
+}	
