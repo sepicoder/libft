@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:55:35 by shomami           #+#    #+#             */
-/*   Updated: 2018/02/23 16:18:52 by shomami          ###   ########.fr       */
+/*   Updated: 2018/02/26 23:39:46 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 		s2++;
 	}
 	if (*s1 != *s2)
-		return (*s1 - *s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 	return (0);
 }

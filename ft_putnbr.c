@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 22:37:20 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/02 01:05:22 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/03 00:48:02 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/03 01:13:30 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
-{
-	size_t i;
-	size_t j;
 
+void	ft_putnbr(int n)
+{
+	int i;
+	int sign;
+
+	sign = -1;
 	i = 0;
-	j = 0;
-	while (i < len)
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	if (n >= 0)
+		i = n;
+	if (n < 0)
 	{
-		if (src[j])
-			dst[i] = src[j++];
-		else
-			dst[i] = '\0';
-		i++;
+		i = n * sign;
+		ft_putchar('-');
 	}
-	return (dst);
+	if (i > 10)
+		ft_putnbr(i / 10);
+	ft_putchar((i % 10) + '0');
 }
+

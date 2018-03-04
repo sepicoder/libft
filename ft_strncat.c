@@ -6,22 +6,20 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/23 13:40:47 by shomami           #+#    #+#             */
-/*   Updated: 2018/02/23 17:03:50 by shomami          ###   ########.fr       */
+/*   Updated: 2018/02/28 17:28:41 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t i;
 	size_t j;
 
 	i = 0;
 	while (s1[i])
-	{
 		i++;
-	}
 	j = 0;
 	while (s2[j] && j < n)
 	{

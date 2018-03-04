@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 22:37:20 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/02 01:05:22 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/02 00:03:07 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/02 00:04:19 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+int		ft_isdigit(int c)
 {
-	size_t i;
-	size_t j;
-
-	i = 0;
-	j = 0;
-	while (i < len)
-	{
-		if (src[j])
-			dst[i] = src[j++];
-		else
-			dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }

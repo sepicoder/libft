@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 22:37:20 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/02 01:05:22 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/03 18:59:27 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/03 19:52:49 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void ft_putendl_fd(char const *s, int fd)
 {
-	size_t i;
-	size_t j;
-
-	i = 0;
-	j = 0;
-	while (i < len)
-	{
-		if (src[j])
-			dst[i] = src[j++];
-		else
-			dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

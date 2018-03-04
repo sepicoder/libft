@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 22:37:20 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/02 01:05:22 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/03 19:53:03 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/03 20:21:02 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t i;
-	size_t j;
+	unsigned int number;
+	int sign;
 
-	i = 0;
-	j = 0;
-	while (i < len)
+	sign = 1;
+	if (n < 0)
 	{
-		if (src[j])
-			dst[i] = src[j++];
-		else
-			dst[i] = '\0';
-		i++;
+		sign = -1;
+		ft_putchar_fd('-', fd);
 	}
-	return (dst);
+	number = n * sign;
+	if (number > 10)
+		ft_putnbr_fd((number / 10), fd);
+	ft_putchar_fd(((number % 10) + '0'), fd);
 }
+
+
+
