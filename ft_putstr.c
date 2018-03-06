@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 00:16:00 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/03 00:47:54 by shomami          ###   ########.fr       */
+/*   Updated: 2018/03/05 12:44:50 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	if (s)
+		while (*s)
+		{
+			ft_putchar(*s);
+			s++;
+		}
 }

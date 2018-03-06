@@ -6,12 +6,11 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 00:48:02 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/03 01:13:30 by shomami          ###   ########.fr       */
+/*   Updated: 2018/03/05 12:50:58 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	ft_putnbr(int n)
 {
@@ -33,4 +32,3 @@ void	ft_putnbr(int n)
 		ft_putnbr(i / 10);
 	ft_putchar((i % 10) + '0');
 }
-
