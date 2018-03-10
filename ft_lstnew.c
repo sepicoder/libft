@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 20:45:52 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/09 19:39:17 by shomami          ###   ########.fr       */
+/*   Updated: 2018/03/09 20:55:45 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	new->next = NULL;
 	return (new);
 }
-

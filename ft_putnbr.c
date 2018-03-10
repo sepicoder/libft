@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 00:48:02 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/09 19:51:35 by shomami          ###   ########.fr       */
+/*   Updated: 2018/03/09 20:52:58 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	ft_putnbr(int n)
 {
-	int i;
-
-	i = 0;
 	if (n == -2147483648)
 		ft_putstr("-2147483648");
-	if (n >= 0)
-		i = n;
-	if (n < 0)
+	else
 	{
-		i = -n;
-		ft_putchar('-');
+		if (n < 0)
+		{
+			n = -n;
+			ft_putchar('-');
+		}
+		if (n >= 10)
+			ft_putnbr(n / 10);
+		ft_putchar((n % 10) + '0');
 	}
-	if (i >= 10)
-		ft_putnbr(i / 10);
-	ft_putchar((i % 10) + '0');
 }
