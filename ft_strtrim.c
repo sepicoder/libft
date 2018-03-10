@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/03 00:48:02 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/09 19:51:35 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/07 22:43:30 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/08 01:03:30 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strtrim(char const *s)
 {
-	int i;
+	int		i;
+	int		end;
 
+	if (!s)
+		return (NULL);
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
 	i = 0;
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	if (n >= 0)
-		i = n;
-	if (n < 0)
+	end = 0;
+	while (s[i])
 	{
-		i = -n;
-		ft_putchar('-');
+		while (s[i] && s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
+			end = i++;
+		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+			i++;
 	}
-	if (i >= 10)
-		ft_putnbr(i / 10);
-	ft_putchar((i % 10) + '0');
+	return (ft_strndup(s, (size_t)end + 1));
 }

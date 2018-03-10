@@ -6,7 +6,7 @@
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 19:53:03 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/05 13:31:16 by shomami          ###   ########.fr       */
+/*   Updated: 2018/03/09 19:32:38 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	number;
-	int				sign;
+	unsigned int number;
 
-	sign = 1;
+	number = n;
 	if (n < 0)
 	{
-		sign = -1;
 		ft_putchar_fd('-', fd);
+		number = -n;
 	}
-	number = n * sign;
-	if (number > 10)
+	if (number >= 10)
 		ft_putnbr_fd((number / 10), fd);
-	ft_putchar_fd(((number % 10) + '0'), fd);
+	ft_putchar_fd((number % 10) + '0', fd);
 }

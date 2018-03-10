@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shomami <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/03 00:48:02 by shomami           #+#    #+#             */
-/*   Updated: 2018/03/09 19:51:35 by shomami          ###   ########.fr       */
+/*   Created: 2018/03/08 20:24:25 by shomami           #+#    #+#             */
+/*   Updated: 2018/03/09 19:41:37 by shomami          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
+	t_list *new_list;
 
-	i = 0;
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	if (n >= 0)
-		i = n;
-	if (n < 0)
+	new_list = NULL;
+	if (!lst || !f)
+		return (NULL);
+	while (lst)
 	{
-		i = -n;
-		ft_putchar('-');
+		new_list = f(lst);
+		new_list->next = ft_lstmap(lst->next, f);
+		return (new_list);
 	}
-	if (i >= 10)
-		ft_putnbr(i / 10);
-	ft_putchar((i % 10) + '0');
+	new_list->next = NULL;
+	return (NULL);
 }
